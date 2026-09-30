@@ -3,7 +3,7 @@
 Review page for the НОМТ tower 3D model and walkthrough. It shows how the model's windows and doors were checked against the architect's drawing set (`Номт хэвлэх 2-11 БА.pdf`) and the Revit DWG export.
 
 ## What's on the page
-- **Walkthrough video:** currently the 2:25 preview cut (`walkthrough.mp4`).
+- **Walkthrough video:** the final 1080p walkthrough, 2:31 (compressed copy `walkthrough.mp4`; full 1080p and 4K files are in the project folder).
 - **Overlays:** the model drawn over the original sheets (plan p11, east elevation p17).
 - **Windows and doors per flat (A–H):** cross-checked across the plan, the elevations and the DWG (346 + 38 automated checks).
 - **Drawing discrepancies to raise with the architect:** for example, the Ц-2 window is 1400 mm high in its detail drawing but 1500 mm in the p19 schedule table.

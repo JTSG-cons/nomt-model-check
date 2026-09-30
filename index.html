@@ -1,4 +1,4 @@
-<!doctype html><html lang="mn"><head><meta charset="utf-8"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html lang="mn"><head><meta charset="utf-8"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box}body{margin:0;padding:0}img{max-width:100%}[hidden]{display:none!important}</style></head><body>
 <title>НОМТ Model Check</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -112,25 +112,26 @@ a{color:var(--glass)}
       <div><dt>Posters</dt><dd>compass poster · types A–H</dd></div>
       <div><dt>Scale</dt><dd class="mono">plan 1:100 · elev. 1:200</dd></div>
       <div><dt>Modelled</dt><dd>floors 1–15, tech floor, crown, site</dd></div>
-      <div><dt>Date</dt><dd class="mono">2026-09-29</dd></div>
+      <div><dt>Date</dt><dd class="mono">2026-09-30</dd></div>
     </dl>
   </header>
 
   <section id="walkthrough">
-    <div class="sec-head"><h2>Walkthrough</h2><span class="ref">2:25 · 16:9</span></div>
+    <div class="sec-head"><h2>Walkthrough</h2><span class="ref">2:31 · 16:9 · 1080p</span></div>
     <div class="video"><video controls playsinline preload="metadata" poster="still_approach.jpg" src="walkthrough.mp4"></video></div>
-    <p class="pending"><strong>Preview cut.</strong> This copy is the low-resolution preview used to check pacing and camera paths.
-      The full 1280×720 render (16 samples, denoised, upscaled to 1080p) is running now; this page will be updated with it.</p>
+    <p class="pending"><strong>Final render.</strong> Native 1920×1080, 16 samples, denoised (a compressed copy plays here; the full-quality
+      file is <code class="mono">deliverables/video/nomt-walkthrough.mp4</code>). It shows all four sides, the south wing's "open book" LED screen,
+      four flats (A, B, C, D) and the typical-floor cutaway.</p>
     <div class="strip">
       <figure><img src="still_approach.jpg" alt="East facade approach, morning sun"><figcaption>Approach to the east (main) facade</figcaption></figure>
-      <figure><img src="still_orbit.jpg" alt="Orbit around the tower"><figcaption>Orbit: east → north → west</figcaption></figure>
+      <figure><img src="still_orbit.jpg" alt="Orbit around the tower"><figcaption>Orbit: north → west → south, with the "open book" LED screen</figcaption></figure>
       <figure><img src="still_facade.jpg" alt="Close-up of the east facade windows and fins"><figcaption>Facade close-up: balconies, living windows, bronze fins</figcaption></figure>
       <figure><img src="still_C.jpg" alt="Flat C living room"><figcaption>C · 79.29 м² · living room, west window</figcaption></figure>
       <figure><img src="still_A.jpg" alt="Flat A living room"><figcaption>A · 74.32 м² · living room and TV wall</figcaption></figure>
       <figure><img src="still_D.jpg" alt="Flat D living room"><figcaption>D · 68.71 м² · living room, east window</figcaption></figure>
       <figure><img src="still_B.jpg" alt="Flat B living room"><figcaption>B · 59.54 м² · living room</figcaption></figure>
       <figure><img src="still_doll.jpg" alt="Dollhouse cutaway of the typical floor"><figcaption>Typical floor 9–15 · all 8 flats</figcaption></figure>
-      <figure><img src="still_finale.jpg" alt="Evening view from the south-west"><figcaption>Evening, from the south-west</figcaption></figure>
+      <figure><img src="still_finale.jpg" alt="Evening view from the south-west"><figcaption>Golden hour, from the south-west, opening on the LED screen</figcaption></figure>
     </div>
   </section>
 
@@ -149,7 +150,7 @@ a{color:var(--glass)}
   </section>
 
   <section id="overlays">
-    <div class="sec-head"><h2>Model over the original sheets</h2><span class="ref">p11 · p17</span></div>
+    <div class="sec-head"><h2>Model over the original sheets</h2><span class="ref">p11 · p16 · p17</span></div>
     <div class="pair">
       <figure><img src="plan_overlay_AC.jpg" alt="Floor 9 section of the model with plan p11 linework overlaid, flats A and C"><figcaption>Floor 9 cut 1.4 m above the floor (model) with plan p11 on top, flats A and C.</figcaption></figure>
       <figure><img src="elev_overlay_E_zoom.jpg" alt="East elevation of the model with sheet p17 overlaid, floors 9–10"><figcaption>East elevation, floors 9–10: drawn frames and vent symbols land on the modelled frames and casements.</figcaption></figure>
@@ -158,6 +159,10 @@ a{color:var(--glass)}
       <span><span class="sw" style="background:#8C8C8C"></span>model walls</span>
       <span><span class="sw" style="background:#9DDCEB"></span>model glass</span>
       <span><span class="sw" style="background:#F59A3A"></span>model door leaves</span></div>
+    <div class="pair" style="margin-top:14px">
+      <figure><img src="elev_overlay_N.jpg" alt="North end: drawing p16, model and the two blended"><figcaption>North end (p16 left drawing): drawing · model · blend. Stair block, lower wing, west block and colonnade piers, crown.</figcaption></figure>
+      <figure><img src="elev_overlay_S.jpg" alt="South end: drawing p16, model and the two blended"><figcaption>South end (p16 right drawing): bronze bands, the "open book" LED screen, west block, crown.</figcaption></figure>
+    </div>
     <p class="note">Full-size overlays: <code class="mono">plan_overlay.jpg</code> (whole floor) and <code class="mono">elev_overlay_E.jpg</code> (east face, floors 5–15).</p>
   </section>
 
@@ -191,7 +196,8 @@ a{color:var(--glass)}
       <li><b>Flat G balcony opening.</b> The p11 dimension string gives 1980 + 1220; the DWG and the p19 schedule give 2000, like the other seven. Modelled 2000. <span class="src">p11 · DWG · p19</span></li>
       <li><b>Balcony glazing Ц-5 / Ц-6</b> is tagged on the plans and p33 but missing from the p19 schedule. <span class="src">p11 · p33 · p19</span></li>
       <li><b>Bronze colour.</b> CMYK 37/52/19/0 on the sheets converts to mauve, while the drawing fill reads bronze-beige. Rendered as bronze. <span class="src">p16–p18 legend</span></li>
-      <li class="decided"><b>Choices made for the visualisation</b> (not in the drawings): beds and nightstands added (the DWG has none); WC doors shown closed; 11 Revit furniture pieces (10 wardrobes, 1 kitchen unit) moved 4–10 cm out of walls they overlapped; balcony frame colour, surrounding blocks and trees are placeholders. <span class="src">logged in scene_spec.json</span></li>
+      <li><b>"Open book" outline.</b> Plans p5–p7 draw a second, thin outline 0.5 m outside the screen's thick outline; the east elevation p17 and the 1250 mm dimension match the thick one. Modelled on the thick outline. <span class="src">p5–p7 · p17</span></li>
+      <li class="decided"><b>Choices made for the visualisation</b> (not in the drawings): bedding, lamps and cushions (the beds and nightstands themselves are from the DWG); WC doors shown closed; 11 Revit furniture pieces (10 wardrobes, 1 kitchen unit) moved 4–10 cm out of walls they overlapped; balcony frame colour, surrounding blocks and trees are placeholders; the LED screen shows a placeholder "НОМТ ТӨВ". <span class="src">logged in scene_spec.json</span></li>
     </ul>
   </section>
 
@@ -207,7 +213,7 @@ a{color:var(--glass)}
           <li><code>deliverables/3d/nomt.blend</code><span>Full scene: tower floors 5–15 as instances, floor 9 furnished, podium, crown, site, lights</span></li>
           <li><code>deliverables/3d/nomt-building.glb</code><span>Whole building + site, Draco-compressed (5.2 MB)</span></li>
           <li><code>deliverables/3d/nomt-typical-floor.glb</code><span>Furnished typical floor, Draco (0.5 MB); uncompressed copy used here</span></li>
-          <li><code>deliverables/video/</code><span>Walkthrough film (final render in progress) and preview</span></li>
+          <li><code>deliverables/video/</code><span>Walkthrough film <code>nomt-walkthrough.mp4</code> (1080p) and <code>nomt-walkthrough-4k.mp4</code> (AI 4K upscale)</span></li>
         </ul>
       </div>
     </div>
@@ -222,9 +228,9 @@ a{color:var(--glass)}
       <li>Blender builds and renders it; orthographic renders are overlaid on the sheets (<code>blender_build.py</code>, <code>overlay_check.py</code>).</li>
       <li>Camera paths are planned and checked through free space; frames render in EEVEE and are cut with Mongolian titles (<code>shots.py</code>, <code>render_shots.py</code>, <code>edit_video.py</code>).</li>
     </ol>
-    <p class="note">One photoreal AI shot (Higgsfield) is reserved for the flat C living room, generated from the model's own start and end frames so the
-      windows cannot drift. The Higgsfield connector is disconnected; the credit cost will be shown before anything is spent.</p>
+    <p class="note">The film itself is the Blender render. Higgsfield was used only to upscale it to 4K (Topaz) — the frames still come from the model,
+      so windows and doors cannot drift. A photoreal AI restyle of the approach was tested and kept out of the film: trees popped in and the
+      surrounding city was invented.</p>
   </section>
 </div>
-
 </body></html>
