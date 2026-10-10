@@ -1,0 +1,122 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>НОМТ Measurement Audit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{--paper:#F2F3F0;--sheet:#FFFFFF;--ink:#1B1F23;--muted:#5A626A;--rule:#D3D6D0;--accent:#8A6444;--ok:#2E7A4D;--ok-bg:#EAF4EE;--warn:#8A5A00;--warn-bg:#FBF3E2;--bad:#9C3A12;--bad-bg:#FBEDE6;
+--f-d:"IBM Plex Sans Condensed","Arial Narrow",Arial,sans-serif;--f-b:"IBM Plex Sans","Segoe UI",Roboto,Arial,sans-serif;--f-m:"IBM Plex Mono",Consolas,monospace}
+@media (prefers-color-scheme:dark){:root{--paper:#121416;--sheet:#191C1F;--ink:#E6E4DF;--muted:#9BA2A9;--rule:#2B3035;--accent:#C99E78;--ok:#63B487;--ok-bg:#16261D;--warn:#E0B060;--warn-bg:#2A2414;--bad:#E08A5F;--bad-bg:#2A1C15;color-scheme:dark}}
+*{box-sizing:border-box} body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 var(--f-b);padding:28px 16px 64px}
+.wrap{max-width:1180px;margin:0 auto;display:grid;gap:18px}
+header h1{font:600 clamp(28px,4vw,42px)/1.05 var(--f-d);margin:6px 0 10px;text-wrap:balance}
+header p{max-width:74ch;margin:0 0 8px;color:var(--muted)} .eyebrow{font:12px var(--f-m);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+section{background:var(--sheet);border:1px solid var(--rule);padding:20px;min-width:0}
+h2{font:600 24px var(--f-d);margin:0 0 10px} h3{font:600 17px var(--f-b);margin:16px 0 6px}
+p,li{max-width:80ch} code{font:13px var(--f-m)}
+.verdict{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;margin-top:6px}
+.verdict div{padding:12px 14px;border-left:3px solid var(--ok);background:var(--ok-bg)} .verdict div.warn{border-color:var(--warn);background:var(--warn-bg)} .verdict div.bad{border-color:var(--bad);background:var(--bad-bg)}
+.verdict b{display:block;font:600 22px var(--f-d)} .verdict span{font-size:13px}
+.tbl{overflow-x:auto} table{border-collapse:collapse;width:100%;font-size:14px;min-width:620px}
+th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--rule);vertical-align:top} th{font:500 12px var(--f-m);color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+td.n{font-family:var(--f-m);white-space:nowrap} tr.good td.n:last-child{color:var(--ok)}
+figure{margin:0} figure img{display:block;width:100%;height:auto;border:1px solid var(--rule)} figcaption{font-size:12.5px;color:var(--muted);margin-top:4px}
+.maps{display:grid;gap:14px}
+.key{display:flex;flex-wrap:wrap;gap:6px 16px;font:12.5px var(--f-m);color:var(--muted);margin:8px 0}
+.key i{display:inline-block;width:22px;height:5px;vertical-align:middle;margin-right:6px}
+ol li,ul li{margin-bottom:6px} a{color:var(--accent)}
+.small{font-size:13px;color:var(--muted)}
+</style></head><body><div class="wrap">
+<header><div class="eyebrow">НОМТ tower · floor 8 · measurement audit · 2026-10-10</div><h1>Is the 3D model's geometry really right?</h1>
+<p>Every dimension printed on the floor-8 plan (PDF sheet p10) was read from the vector file and measured again in a
+<b>copy</b> of the model (the building file and all eight apartment FBX files), cut through at 1.2 m above the floor. The working files were not touched.</p>
+<p><a href="index.html">Model check and walkthrough</a> · <a href="units.html">Apartment types A–H</a></p></header>
+
+<section><h2>Answer</h2>
+<p>Close, but not exact. The layout, openings and rooms are right. Wall faces sit a few millimetres to about 2 cm off the drawing, from three
+systematic causes found below. A fix has been built and tested; with it the plan dimensions match to about 3 mm.</p>
+<div class="verdict">
+<div class="warn"><b>92 %</b><span>of 235 room / wall dimensions within 15 mm (median −3 mm, worst 23 mm). The usual
+"LOA30" grade asks for 95 %.</span></div>
+<div class="warn"><b>−6 → −17 mm</b><span>window positions drift against their wall openings from the north to the south end of the tower (scale slip).</span></div>
+<div class="bad"><b>+6 to +9 mm</b><span>walls are drawn too thick: 100 / 120 / 200 / 240 mm walls come out ≈ 106 / 129 / 208 / 248 mm.</span></div>
+<div><b>187 / 187</b><span>dimensions measured in the apartment FBX files equal the building model (186 exactly, 1 within 1.5 mm): the export adds no error.</span></div>
+</div></section>
+
+<section><h2>What was checked</h2>
+<div class="tbl"><table><thead><tr><th>Step</th><th>Count</th><th>Result</th></tr></thead><tbody>
+<tr><td>Dimension strings read from p10 (number + its two end ticks)</td><td class="n">363</td><td>all found</td></tr>
+<tr><td>The drawing against itself: drawn length vs printed number</td><td class="n">363</td><td>0 differ by more than 5 mm (at the true scale, below)</td></tr>
+<tr><td>Both ends on a wall face or grid axis, so they can be measured in the model</td><td class="n">254</td><td>235 inside the floor, 19 facade opening chains</td></tr>
+<tr><td>An end on a fixture, furniture, slope or label (not geometry)</td><td class="n">82</td><td>not scored</td></tr>
+<tr><td>No matching model face found</td><td class="n">12</td><td>listed in <code>audit/dimensions.json</code></td></tr>
+<tr><td>Known drawing conflict</td><td class="n">1</td><td>Flat G balcony: chain says 1980, DWG and schedule say 2000. Modelled 2000 (logged earlier).</td></tr>
+</tbody></table></div></section>
+
+<section><h2>Three causes, measured</h2>
+<h3>1. Walls traced from a picture, not the lines</h3>
+<p>The wall shapes were traced from a rendered image of the PDF at 8.8 mm per pixel, then simplified with a 2-pixel tolerance. Any face can
+sit up to ~18 mm off and lean slightly. A 15 mm "stroke" correction was then taken off each side, but about 19 mm was needed, so walls are 6–9 mm too thick
+and rooms 3–12 mm too small. Median wall-thickness error against the standard sizes: <b>8.0 mm</b>.</p>
+<h3>2. Drawing scale off by 0.031 %</h3>
+<p>The pipeline uses 52.92 mm per PDF point. Grid axes 4→10 measure 756.092 pt for 40 000 mm on both p10 and p11, which gives <b>52.9036</b>.
+Walls were placed with the first number, windows from the dimension chains in true millimetres. Measured on 37 window jambs, the windows sit
+6 mm (north end) to 17 mm (south end) from their drawn jambs, a steady 0.25 mm per metre with only 1.2 mm scatter.</p>
+<h3>3. Hollow columns</h3>
+<p>Hatched columns and casings traced as a 35 mm outline ring around an empty middle. They look solid in renders (they are capped top and bottom),
+but the geometry is hollow.</p>
+</section>
+
+<section><h2>The fix, tested on the copy</h2>
+<p><code>tools/snap_walls.py</code> moves every traced wall face onto the PDF's own vector wall line (Revit draws each cut wall as a 0.43–0.51 pt
+outline centred on the real face). It fills the hollow columns, and restores anything the snap would lose. Scored the same way as the current model:</p>
+<div class="tbl"><table><thead><tr><th>Measure</th><th>Current model</th><th>With snapped walls</th></tr></thead><tbody>
+<tr class="good"><td>Room / wall dimensions within 10 mm</td><td class="n">81 %</td><td class="n">97.9 %</td></tr>
+<tr class="good"><td>… within 15 mm (LOA30 asks 95 %)</td><td class="n">92 %</td><td class="n">97.9 %</td></tr>
+<tr class="good"><td>95th-percentile error</td><td class="n">17.7 mm</td><td class="n">3.2 mm</td></tr>
+<tr class="good"><td>Median error</td><td class="n">−3.2 mm</td><td class="n">+0.6 mm</td></tr>
+<tr class="good"><td>Facade opening chains within 1 mm</td><td class="n">—</td><td class="n">23 / 23</td></tr>
+<tr class="good"><td>Wall thickness, median error vs standard size</td><td class="n">8.0 mm</td><td class="n">0.1 mm</td></tr>
+</tbody></table></div>
+<p class="small">Remaining: two pilaster faces (one each in flats B and F, mirror images) still come out 50 mm off in the prototype. They need a manual fix before rebuilding.
+The outer cladding face is built separately in the model, so it is not affected. The prototype is 2D: walls are vertical, so their cut at 1.2 m is the plan shape.
+The same 2D test on the current walls reproduces the 3D model's numbers (median −3.3 vs −3.2 mm), so the comparison is fair.</p>
+<p><b>Applying it</b> means: set the scale to 52.9036, use the snapped walls, rebuild the model and the eight apartment files, and re-run this audit.
+Changes of 3–20 mm do not show in the renders, so the existing 4K renders and the walkthrough can stay.</p>
+</section>
+
+<section><h2>Deviation maps</h2>
+<div class="key"><span><i style="background:#28a028"></i>within 10 mm</span><span><i style="background:#e6aa00"></i>10–15 mm</span><span><i style="background:#dc1e1e"></i>over 15 mm</span><span><i style="background:#c83cc8"></i>known drawing conflict</span><span><i style="background:#a0a0a0"></i>not scored</span></div>
+<div class="maps">
+<figure><img src="audit/map_current.jpg" alt="Floor 8 plan with every dimension coloured by how far the current 3D model is from it" loading="lazy"><figcaption>Current model. Numbers are model − drawing in mm. The red bars along the bottom are the facade window chain.</figcaption></figure>
+<figure><img src="audit/map_snapped.jpg" alt="The same plan scored against the snapped walls: almost all green" loading="lazy"><figcaption>With the snapped walls (prototype).</figcaption></figure>
+</div></section>
+
+<section><h2>Flagged items checked by eye</h2>
+<ul>
+<li><b>"250" pier, flats B and F:</b> modelled 6.26–6.51 m (≈ 253 mm), correct. The flag comes from the column face just behind it.</li>
+<li><b>"3830", flat C:</b> the model reads 3822 (−8 mm) at the dimension's position. An earlier read of −25 mm came from the traced face leaning 9 mm along its length.</li>
+<li><b>Room widths short by 10–22 mm</b> (2200 bathrooms, 2100, 4160, 5070): over-thick walls plus trace error. With the snapped walls, all 45 flagged room dimensions come within 10 mm (44 within 2 mm).</li>
+<li><b>Facade chain</b> (+14 … +23 mm): window openings from the chain vs jambs from the traced walls, made worse by the scale slip.</li>
+</ul></section>
+
+<section><h2>How it was done, and why this way</h2>
+<ol>
+<li>The model was <b>duplicated</b> first (<code>D:\NOMT_audit_copy_2026-10-10</code>, MD5-checked). Everything was measured on the copy.</li>
+<li><b>Ground truth = the architect's printed dimensions</b>, not the model's own data: 363 dimension strings and their tick marks read from the vector PDF.
+The drawing was checked against itself first.</li>
+<li>Each scored dimension was <b>measured again in the model</b> by cutting the walls at 1.2 m, in the building file and in each apartment FBX.
+Result: deviation per dimension, percentage within tolerance, and a colour deviation map.</li>
+<li><b>Graded</b> against the USIBD Level of Accuracy bands (LOA30 = 5–15 mm at 95 % confidence). The worst flags were checked by eye on the drawing.</li>
+</ol>
+<p class="small">Sources:
+<a href="https://cdn.ymaws.com/www.nysapls.org/resource/resmgr/2019_conference/handouts/hale-g_bim_loa_guide_c120_v2.pdf">USIBD LOA Specification Guide C120 v2</a> ·
+<a href="https://www.aeczoneglobal.com/blog/usibd-level-of-accuracy-us-scan-to-bim/">USIBD LOA explained</a> ·
+<a href="https://www.researchgate.net/publication/321218676_Scan-to-BIM_Output_Validation_Towards_a_Standardized_Geometric_Quality_Assessment_of_Building_Information_Models_Based_on_Point_Clouds">Scan-to-BIM output validation: standardized geometric quality assessment</a> ·
+<a href="https://www.hitechdigital.com/blog/3d-scan-to-bim-conversion-qc-validation-techniques">Scan-to-BIM QC validation techniques</a> ·
+<a href="https://vibimglobal.com/blog/scan-to-bim-quality-control/">Scan-to-BIM quality control</a> ·
+<a href="https://www.undet.com/verify-your-3d-models/">Verifying 3D models with deviation maps</a>.
+These are written for scan-to-BIM. Here the reference is the drawing set rather than a point cloud, so "measured" means the drawing's printed dimensions.</p>
+<p class="small">Tools: <code>tools/audit_dimensions.py</code> (Blender cut + scoring), <code>tools/snap_walls.py</code> (fix prototype). Full results:
+<code>audit/dimensions.json</code>, <code>variants.json</code>.</p>
+</section>
+</div></body></html>
