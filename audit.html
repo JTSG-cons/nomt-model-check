@@ -31,7 +31,24 @@ ol li,ul li{margin-bottom:6px} a{color:var(--accent)}
 <b>copy</b> of the model (the building file and all eight apartment FBX files), cut through at 1.2 m above the floor. The working files were not touched.</p>
 <p><a href="index.html">Model check and walkthrough</a> · <a href="units.html">Apartment types A–H</a></p></header>
 
-<section><h2>Answer</h2>
+<section><h2>Update 2026-10-11: fix applied</h2>
+<p>The fix is now in the working model. The walls are snapped to the drawing's own wall lines and the corner pillars patched.
+Each window is moved onto the drawing's jamb positions. The model and all eight apartment files were rebuilt, and this audit
+was re-run on a fresh copy.</p>
+<div class="verdict">
+<div><b>254 / 254</b><span>plan dimensions now within 10 mm (was 92 % within 15 mm). Median +0.6 mm, p95 2.9 mm, worst 9.5 mm.</span></div>
+<div><b>0.0 mm/m</b><span>window drift along the tower: windows now sit on their drawn jambs (was −6 → −17 mm).</span></div>
+<div><b>8 / 8</b><span>apartment files pass their checks again; walls vs the PDF linework p90 1.0–2.0 cm (was up to 2.2 cm).</span></div>
+<div><b>Kitchens</b><span>found on the way: 7 of 8 worktops had a slanted front edge, from DWG lines chained across separate
+entities. They are rebuilt from per-entity linework and are now straight.</span></div>
+</div>
+<p class="small">Still open: one uniform 0.03 % size offset, about 13 mm over the 41 m tower and under 2 mm across any room.
+It is shared with the website's plan data, and removing it means regenerating those plans as well. Also open: a 1.5 mm
+difference on one apartment-file dimension, and the DWG's own wall coverage (it holds only some walls as wall objects).
+Backups of the pre-fix files: <code>D:\NOMT_backup_pre_fix_2026-10-11</code>.</p>
+</section>
+
+<section><h2>Answer (audit of 2026-10-10, before the fix)</h2>
 <p>Close, but not exact. The layout, openings and rooms are right. Wall faces sit a few millimetres to about 2 cm off the drawing, from three
 systematic causes found below. A fix has been built and tested; with it the plan dimensions match to about 3 mm.</p>
 <div class="verdict">

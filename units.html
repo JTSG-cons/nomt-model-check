@@ -15,6 +15,7 @@ nav{display:flex;flex-wrap:wrap;gap:8px} nav a{font:500 13px var(--f-m);color:va
 .head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px;margin-bottom:12px}
 .head h2{font:600 26px var(--f-d);margin:0} .tag{font:13px var(--f-m);color:var(--accent)}
 .verdict{font:500 12px var(--f-m);padding:2px 8px;margin-left:auto} .verdict.pass{background:var(--ok-bg);color:var(--ok)} .verdict.fail{background:var(--bad-bg);color:var(--bad)}
+.plan{margin:0 auto 12px;max-width:760px} .plan img{display:block;width:100%;aspect-ratio:1/1;border:1px solid var(--rule)}
 .shots{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:auto auto;gap:10px}
 .shots figure{margin:0;min-width:0} .shots figure:first-child{grid-row:span 2}
 .shots img{display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:16/9;border:1px solid var(--rule)}
@@ -27,49 +28,59 @@ a{color:var(--accent)}
 </style></head><body><div class="wrap">
 <header><div class="eyebrow">НОМТ tower · floor 8 · JTS LLC</div><h1>Apartment types A–H</h1>
 <p>Each type was cut from the verified building model and checked against the drawings: floor area against the plan's
-rooms, every window and door against sheet p10, and the walls against the PDF linework. Renders: a 4K dollhouse cutaway plus
-eye-level living room and bedroom. The 3D files (FBX, OBJ, GLB, Blend) are in the project folder
-<code>deliverables/3d/units/</code>. <a href="index.html">Model check and walkthrough →</a> · <a href="audit.html">Measurement audit →</a></p></header>
+rooms, every window and door against sheet p10, and the walls against the PDF linework (re-measured 2026-10-11: every
+printed plan dimension within 10 mm). Renders: a square 4096 × 4096 top-down plan view in the style of the earlier A–H images,
+but with the true layout; a 4K dollhouse cutaway; eye-level living room and bedroom. The 3D files (FBX, OBJ, GLB, Blend) are
+in the project folder <code>deliverables/3d/units/</code>. <a href="index.html">Model check and walkthrough →</a> ·
+<a href="audit.html">Measurement audit →</a></p></header>
 <nav><a href="#type-A">Type A</a><a href="#type-B">Type B</a><a href="#type-C">Type C</a><a href="#type-D">Type D</a><a href="#type-E">Type E</a><a href="#type-F">Type F</a><a href="#type-G">Type G</a><a href="#type-H">Type H</a></nav>
 <section class="unit" id="type-A">
   <div class="head"><h2>Type A</h2><span class="tag">74.31 m² · 3 rooms · windows west</span>
   <span class="verdict pass">All checks pass</span></div>
+  <figure class="plan"><img src="units/A_plan3d.jpg" alt="Type A: top-down 3D plan, furnished" loading="lazy"><figcaption>Plan view, 1:1 (4096 × 4096), true proportions from the checked model</figcaption></figure>
   <div class="shots"><figure><img src="units/A_dollhouse.jpg" alt="Type A: dollhouse cutaway" loading="lazy"><figcaption>Dollhouse cutaway</figcaption></figure><figure><img src="units/A_living.jpg" alt="Type A: living room" loading="lazy"><figcaption>Living room</figcaption></figure><figure><img src="units/A_bedroom.jpg" alt="Type A: bedroom" loading="lazy"><figcaption>Bedroom</figcaption></figure></div>
-  <ul class="checks"><li class="ok"><b>floor finish vs plan rooms</b> 71.27 m² vs 73.18 m² on plan (-2.6%); schedule 74.31 m²</li><li class="ok"><b>windows glazed within drawn spans</b> 3/3 (Ц-3, LW, Ц-2)</li><li class="ok"><b>every drawn door has its leaf</b> 5/5 (ДХ-3, ДХ-3, ДХ-4, ДХ-2, ДХ-4)</li><li class="ok"><b>walls vs PDF p10 linework</b> median 0.0 cm, p90 1.0 cm</li></ul>
+  <ul class="checks"><li class="ok"><b>floor finish vs plan rooms</b> 71.11 m² vs 73.18 m² on plan (-2.8%); schedule 74.31 m²</li><li class="ok"><b>windows glazed within drawn spans</b> 3/3 (Ц-3, LW, Ц-2)</li><li class="ok"><b>every drawn door has its leaf</b> 5/5 (ДХ-3, ДХ-3, ДХ-4, ДХ-2, ДХ-4)</li><li class="ok"><b>walls vs PDF p10 linework</b> median 0.0 cm, p90 1.0 cm</li></ul>
 </section><section class="unit" id="type-B">
   <div class="head"><h2>Type B</h2><span class="tag">59.53 m² · 2 rooms · windows east</span>
   <span class="verdict pass">All checks pass</span></div>
+  <figure class="plan"><img src="units/B_plan3d.jpg" alt="Type B: top-down 3D plan, furnished" loading="lazy"><figcaption>Plan view, 1:1 (4096 × 4096), true proportions from the checked model</figcaption></figure>
   <div class="shots"><figure><img src="units/B_dollhouse.jpg" alt="Type B: dollhouse cutaway" loading="lazy"><figcaption>Dollhouse cutaway</figcaption></figure><figure><img src="units/B_living.jpg" alt="Type B: living room" loading="lazy"><figcaption>Living room</figcaption></figure><figure><img src="units/B_bedroom.jpg" alt="Type B: bedroom" loading="lazy"><figcaption>Bedroom</figcaption></figure></div>
-  <ul class="checks"><li class="ok"><b>floor finish vs plan rooms</b> 60.94 m² vs 60.01 m² on plan (+1.5%); schedule 59.53 m²</li><li class="ok"><b>windows glazed within drawn spans</b> 2/2 (Ц-3, LW)</li><li class="ok"><b>every drawn door has its leaf</b> 3/3 (ДХ-3, ДХ-4, ДХ-2)</li><li class="ok"><b>walls vs PDF p10 linework</b> median 0.0 cm, p90 2.0 cm</li></ul>
+  <ul class="checks"><li class="ok"><b>floor finish vs plan rooms</b> 61.01 m² vs 60.01 m² on plan (+1.7%); schedule 59.53 m²</li><li class="ok"><b>windows glazed within drawn spans</b> 2/2 (Ц-3, LW)</li><li class="ok"><b>every drawn door has its leaf</b> 3/3 (ДХ-3, ДХ-4, ДХ-2)</li><li class="ok"><b>walls vs PDF p10 linework</b> median 0.0 cm, p90 2.0 cm</li></ul>
 </section><section class="unit" id="type-C">
   <div class="head"><h2>Type C</h2><span class="tag">79.28 m² · 3 rooms · windows west</span>
   <span class="verdict pass">All checks pass</span></div>
+  <figure class="plan"><img src="units/C_plan3d.jpg" alt="Type C: top-down 3D plan, furnished" loading="lazy"><figcaption>Plan view, 1:1 (4096 × 4096), true proportions from the checked model</figcaption></figure>
   <div class="shots"><figure><img src="units/C_dollhouse.jpg" alt="Type C: dollhouse cutaway" loading="lazy"><figcaption>Dollhouse cutaway</figcaption></figure><figure><img src="units/C_living.jpg" alt="Type C: living room" loading="lazy"><figcaption>Living room</figcaption></figure><figure><img src="units/C_bedroom.jpg" alt="Type C: bedroom" loading="lazy"><figcaption>Bedroom</figcaption></figure></div>
-  <ul class="checks"><li class="ok"><b>floor finish vs plan rooms</b> 83.61 m² vs 81.53 m² on plan (+2.6%); schedule 79.28 m²</li><li class="ok"><b>windows glazed within drawn spans</b> 3/3 (Ц-2, LW, Ц-4)</li><li class="ok"><b>every drawn door has its leaf</b> 5/5 (ДХ-3, ДХ-4, ДХ-2, ДХ-4, ДХ-3)</li><li class="ok"><b>walls vs PDF p10 linework</b> median 0.0 cm, p90 1.0 cm</li></ul>
+  <ul class="checks"><li class="ok"><b>floor finish vs plan rooms</b> 83.45 m² vs 81.53 m² on plan (+2.4%); schedule 79.28 m²</li><li class="ok"><b>windows glazed within drawn spans</b> 3/3 (Ц-2, LW, Ц-4)</li><li class="ok"><b>every drawn door has its leaf</b> 5/5 (ДХ-3, ДХ-4, ДХ-2, ДХ-4, ДХ-3)</li><li class="ok"><b>walls vs PDF p10 linework</b> median 0.0 cm, p90 1.4 cm</li></ul>
 </section><section class="unit" id="type-D">
   <div class="head"><h2>Type D</h2><span class="tag">68.71 m² · 2 rooms · windows east</span>
   <span class="verdict pass">All checks pass</span></div>
+  <figure class="plan"><img src="units/D_plan3d.jpg" alt="Type D: top-down 3D plan, furnished" loading="lazy"><figcaption>Plan view, 1:1 (4096 × 4096), true proportions from the checked model</figcaption></figure>
   <div class="shots"><figure><img src="units/D_dollhouse.jpg" alt="Type D: dollhouse cutaway" loading="lazy"><figcaption>Dollhouse cutaway</figcaption></figure><figure><img src="units/D_living.jpg" alt="Type D: living room" loading="lazy"><figcaption>Living room</figcaption></figure><figure><img src="units/D_bedroom.jpg" alt="Type D: bedroom" loading="lazy"><figcaption>Bedroom</figcaption></figure></div>
-  <ul class="checks"><li class="ok"><b>floor finish vs plan rooms</b> 71.58 m² vs 70.90 m² on plan (+1.0%); schedule 68.71 m²</li><li class="ok"><b>windows glazed within drawn spans</b> 2/2 (LW, Ц-4)</li><li class="ok"><b>every drawn door has its leaf</b> 3/3 (ДХ-3, ДХ-4, ДХ-2)</li><li class="ok"><b>walls vs PDF p10 linework</b> median 0.0 cm, p90 2.0 cm</li></ul>
+  <ul class="checks"><li class="ok"><b>floor finish vs plan rooms</b> 71.70 m² vs 70.90 m² on plan (+1.1%); schedule 68.71 m²</li><li class="ok"><b>windows glazed within drawn spans</b> 2/2 (LW, Ц-4)</li><li class="ok"><b>every drawn door has its leaf</b> 3/3 (ДХ-3, ДХ-4, ДХ-2)</li><li class="ok"><b>walls vs PDF p10 linework</b> median 0.0 cm, p90 1.4 cm</li></ul>
 </section><section class="unit" id="type-E">
   <div class="head"><h2>Type E</h2><span class="tag">74.55 m² · 3 rooms · windows west</span>
   <span class="verdict pass">All checks pass</span></div>
+  <figure class="plan"><img src="units/E_plan3d.jpg" alt="Type E: top-down 3D plan, furnished" loading="lazy"><figcaption>Plan view, 1:1 (4096 × 4096), true proportions from the checked model</figcaption></figure>
   <div class="shots"><figure><img src="units/E_dollhouse.jpg" alt="Type E: dollhouse cutaway" loading="lazy"><figcaption>Dollhouse cutaway</figcaption></figure><figure><img src="units/E_living.jpg" alt="Type E: living room" loading="lazy"><figcaption>Living room</figcaption></figure><figure><img src="units/E_bedroom.jpg" alt="Type E: bedroom" loading="lazy"><figcaption>Bedroom</figcaption></figure></div>
-  <ul class="checks"><li class="ok"><b>floor finish vs plan rooms</b> 71.32 m² vs 73.51 m² on plan (-3.0%); schedule 74.55 m²</li><li class="ok"><b>windows glazed within drawn spans</b> 3/3 (Ц-2, LW, Ц-3)</li><li class="ok"><b>every drawn door has its leaf</b> 5/5 (ДХ-3, ДХ-3, ДХ-4, ДХ-4, ДХ-2)</li><li class="ok"><b>walls vs PDF p10 linework</b> median 0.0 cm, p90 1.0 cm</li></ul>
+  <ul class="checks"><li class="ok"><b>floor finish vs plan rooms</b> 71.15 m² vs 73.51 m² on plan (-3.2%); schedule 74.55 m²</li><li class="ok"><b>windows glazed within drawn spans</b> 3/3 (Ц-2, LW, Ц-3)</li><li class="ok"><b>every drawn door has its leaf</b> 5/5 (ДХ-3, ДХ-3, ДХ-4, ДХ-4, ДХ-2)</li><li class="ok"><b>walls vs PDF p10 linework</b> median 0.0 cm, p90 1.0 cm</li></ul>
 </section><section class="unit" id="type-F">
   <div class="head"><h2>Type F</h2><span class="tag">60.1 m² · 2 rooms · windows east</span>
   <span class="verdict pass">All checks pass</span></div>
+  <figure class="plan"><img src="units/F_plan3d.jpg" alt="Type F: top-down 3D plan, furnished" loading="lazy"><figcaption>Plan view, 1:1 (4096 × 4096), true proportions from the checked model</figcaption></figure>
   <div class="shots"><figure><img src="units/F_dollhouse.jpg" alt="Type F: dollhouse cutaway" loading="lazy"><figcaption>Dollhouse cutaway</figcaption></figure><figure><img src="units/F_living.jpg" alt="Type F: living room" loading="lazy"><figcaption>Living room</figcaption></figure><figure><img src="units/F_bedroom.jpg" alt="Type F: bedroom" loading="lazy"><figcaption>Bedroom</figcaption></figure></div>
-  <ul class="checks"><li class="ok"><b>floor finish vs plan rooms</b> 62.07 m² vs 61.12 m² on plan (+1.6%); schedule 60.1 m²</li><li class="ok"><b>windows glazed within drawn spans</b> 2/2 (LW, Ц-3)</li><li class="ok"><b>every drawn door has its leaf</b> 3/3 (ДХ-3, ДХ-4, ДХ-2)</li><li class="ok"><b>walls vs PDF p10 linework</b> median 0.0 cm, p90 1.0 cm</li></ul>
+  <ul class="checks"><li class="ok"><b>floor finish vs plan rooms</b> 62.19 m² vs 61.12 m² on plan (+1.7%); schedule 60.1 m²</li><li class="ok"><b>windows glazed within drawn spans</b> 2/2 (LW, Ц-3)</li><li class="ok"><b>every drawn door has its leaf</b> 3/3 (ДХ-3, ДХ-4, ДХ-2)</li><li class="ok"><b>walls vs PDF p10 linework</b> median 0.0 cm, p90 1.4 cm</li></ul>
 </section><section class="unit" id="type-G">
   <div class="head"><h2>Type G</h2><span class="tag">79.29 m² · 3 rooms · windows west</span>
   <span class="verdict pass">All checks pass</span></div>
+  <figure class="plan"><img src="units/G_plan3d.jpg" alt="Type G: top-down 3D plan, furnished" loading="lazy"><figcaption>Plan view, 1:1 (4096 × 4096), true proportions from the checked model</figcaption></figure>
   <div class="shots"><figure><img src="units/G_dollhouse.jpg" alt="Type G: dollhouse cutaway" loading="lazy"><figcaption>Dollhouse cutaway</figcaption></figure><figure><img src="units/G_living.jpg" alt="Type G: living room" loading="lazy"><figcaption>Living room</figcaption></figure><figure><img src="units/G_bedroom.jpg" alt="Type G: bedroom" loading="lazy"><figcaption>Bedroom</figcaption></figure></div>
-  <ul class="checks"><li class="ok"><b>floor finish vs plan rooms</b> 83.60 m² vs 81.55 m² on plan (+2.5%); schedule 79.29 m²</li><li class="ok"><b>windows glazed within drawn spans</b> 3/3 (Ц-4, LW, Ц-2)</li><li class="ok"><b>every drawn door has its leaf</b> 5/5 (ДХ-3, ДХ-3, ДХ-4, ДХ-2, ДХ-4)</li><li class="ok"><b>walls vs PDF p10 linework</b> median 0.0 cm, p90 1.0 cm</li></ul>
+  <ul class="checks"><li class="ok"><b>floor finish vs plan rooms</b> 83.48 m² vs 81.55 m² on plan (+2.4%); schedule 79.29 m²</li><li class="ok"><b>windows glazed within drawn spans</b> 3/3 (Ц-4, LW, Ц-2)</li><li class="ok"><b>every drawn door has its leaf</b> 5/5 (ДХ-3, ДХ-3, ДХ-4, ДХ-2, ДХ-4)</li><li class="ok"><b>walls vs PDF p10 linework</b> median 0.0 cm, p90 1.0 cm</li></ul>
 </section><section class="unit" id="type-H">
   <div class="head"><h2>Type H</h2><span class="tag">68.7 m² · 2 rooms · windows east</span>
   <span class="verdict pass">All checks pass</span></div>
+  <figure class="plan"><img src="units/H_plan3d.jpg" alt="Type H: top-down 3D plan, furnished" loading="lazy"><figcaption>Plan view, 1:1 (4096 × 4096), true proportions from the checked model</figcaption></figure>
   <div class="shots"><figure><img src="units/H_dollhouse.jpg" alt="Type H: dollhouse cutaway" loading="lazy"><figcaption>Dollhouse cutaway</figcaption></figure><figure><img src="units/H_living.jpg" alt="Type H: living room" loading="lazy"><figcaption>Living room</figcaption></figure><figure><img src="units/H_bedroom.jpg" alt="Type H: bedroom" loading="lazy"><figcaption>Bedroom</figcaption></figure></div>
-  <ul class="checks"><li class="ok"><b>floor finish vs plan rooms</b> 71.83 m² vs 70.90 m² on plan (+1.3%); schedule 68.7 m²</li><li class="ok"><b>windows glazed within drawn spans</b> 2/2 (Ц-4, LW)</li><li class="ok"><b>every drawn door has its leaf</b> 3/3 (ДХ-3, ДХ-4, ДХ-2)</li><li class="ok"><b>walls vs PDF p10 linework</b> median 0.0 cm, p90 2.0 cm</li></ul>
+  <ul class="checks"><li class="ok"><b>floor finish vs plan rooms</b> 71.94 m² vs 70.90 m² on plan (+1.5%); schedule 68.7 m²</li><li class="ok"><b>windows glazed within drawn spans</b> 2/2 (Ц-4, LW)</li><li class="ok"><b>every drawn door has its leaf</b> 3/3 (ДХ-3, ДХ-4, ДХ-2)</li><li class="ok"><b>walls vs PDF p10 linework</b> median 0.0 cm, p90 2.0 cm</li></ul>
 </section>
 </div></body></html>
